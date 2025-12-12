@@ -7,6 +7,10 @@ A beautiful, personalized "Year in Review" dashboard for Jellyfin media server u
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?logo=typescript)
 ![License](https://img.shields.io/badge/license-AGPL--3.0-blue)
 
+## Demo video
+
+[![video-demo](https://img.youtube.com/vi/BSuUIqWuZLQ/0.jpg)](https://www.youtube.com/watch?v=BSuUIqWuZLQ)
+
 ## Features
 
 ### Personal Statistics
