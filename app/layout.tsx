@@ -30,11 +30,7 @@ export default function RootLayout({
 				{/* Native script tag for Umami - Next.js Script component with afterInteractive
 				    strategy injects scripts client-side which can lose data attributes */}
 				{UMAMI_ENABLED && (
-					<script
-						defer
-						src={UMAMI_SRC}
-						data-website-id={UMAMI_WEBSITE_ID}
-					/>
+					<script defer src={UMAMI_SRC} data-website-id={UMAMI_WEBSITE_ID} />
 				)}
 			</head>
 			<body className={`${inter.variable} antialiased`}>{children}</body>
