@@ -1,0 +1,26 @@
+name: Builder
+run-name: ${{ gitea.actor }} is building project 🚀
+on:
+  workflow_dispatch:
+
+env:
+  DOCKER_REGISTRY: ${{ vars.DOCKER_REGISTRY }}
+  DOCKER_IMAGE: ${{ vars.DOCKER_IMAGE }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Build Docker image
+        run: docker compose build jellyfin-year-in-review
+      - name: Login to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ vars.DOCKER_REGISTRY }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
+      - name: Push Docker image
+        run: docker compose push jellyfin-year-in-review
+      

@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+	--color-jellyfin: #00a4dc;
+	--color-jellyfin-dark: #0086b3;
+	--color-jellyfin-light: #33b5e5;
+
+	--font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+	--background: #0a0a0a;
+	--foreground: #fafafa;
+	--card: #141414;
+	--card-foreground: #fafafa;
+	--primary: #00a4dc;
+	--primary-foreground: #ffffff;
+	--secondary: #262626;
+	--secondary-foreground: #fafafa;
+	--muted: #262626;
+	--muted-foreground: #a1a1aa;
+	--accent: #262626;
+	--accent-foreground: #fafafa;
+	--border: #27272a;
+	--ring: #00a4dc;
+	--radius: 0.75rem;
+}
+
+* {
+	border-color: var(--border);
+}
+
+body {
+	background: var(--background);
+	color: var(--foreground);
+	font-family: var(--font-sans);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--secondary);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--muted-foreground);
+}
+
+/* Scroll snap for slides */
+.snap-container {
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+	height: 100vh;
+}
+
+.snap-slide {
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+	min-height: 100vh;
+}
+
+/* Gradient backgrounds */
+.gradient-jellyfin {
+	background: linear-gradient(135deg, #00a4dc 0%, #6366f1 50%, #a855f7 100%);
+}
+
+.gradient-mesh {
+	background:
+		radial-gradient(at 40% 20%, hsla(210, 100%, 30%, 0.3) 0px, transparent 50%),
+		radial-gradient(at 80% 0%, hsla(280, 100%, 30%, 0.2) 0px, transparent 50%),
+		radial-gradient(at 0% 50%, hsla(200, 100%, 30%, 0.2) 0px, transparent 50%),
+		radial-gradient(at 80% 50%, hsla(270, 100%, 30%, 0.2) 0px, transparent 50%),
+		radial-gradient(at 0% 100%, hsla(210, 100%, 30%, 0.3) 0px, transparent 50%);
+}
+
+/* Glassmorphism */
+.glass {
+	background: rgba(20, 20, 20, 0.7);
+	backdrop-filter: blur(16px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Text gradient */
+.text-gradient {
+	background: linear-gradient(135deg, #00a4dc 0%, #a855f7 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  <title>Your {{YEAR}} Media Year in Review</title>
+  <style type="text/css">
+    :root {
+      color-scheme: light dark;
+      supported-color-schemes: light dark;
+    }
+    /* Light mode (default) */
+    .email-body { background-color: #f5f5f7 !important; }
+    .email-card { background-color: #ffffff !important; border: none !important; }
+    .email-year { color: #a855f7 !important; }
+    .email-title { color: #1a1a2e !important; }
+    .email-text { color: #4a4a5a !important; }
+    .email-button { background-color: #a855f7 !important; color: #ffffff !important; }
+
+    /* Dark mode for Apple Mail, Outlook.com, iOS Mail */
+    @media (prefers-color-scheme: dark) {
+      .email-body { background-color: #1a1a2e !important; }
+      .email-card { background-color: #252542 !important; border: none !important; }
+      .email-year { color: #a855f7 !important; }
+      .email-title { color: #ffffff !important; }
+      .email-text { color: #a0a0b0 !important; }
+      .email-button { background-color: #a855f7 !important; color: #ffffff !important; }
+    }
+
+    /* Outlook Android dark mode */
+    [data-ogsc] .email-body { background-color: #1a1a2e !important; }
+    [data-ogsc] .email-card { background-color: #252542 !important; border: none !important; }
+    [data-ogsc] .email-title { color: #ffffff !important; }
+    [data-ogsc] .email-text { color: #a0a0b0 !important; }
+  </style>
+</head>
+<body class="email-body" style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f7;">
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="email-body" style="margin: 0 auto; background-color: #f5f5f7;">
+    <tr>
+      <td style="padding: 40px 20px;">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="email-card" style="max-width: 500px; margin: 0 auto; background-color: #ffffff; border-radius: 24px;">
+          <tr>
+            <td style="padding: 40px; text-align: center;">
+              <!-- Year Badge -->
+              <div class="email-year" style="color: #a855f7; font-size: 64px; font-weight: bold; margin-bottom: 8px;">
+                {{YEAR}}
+              </div>
+              <h1 class="email-title" style="color: #1a1a2e; font-size: 28px; font-weight: 600; margin: 0 0 16px 0;">
+                Year in Review
+              </h1>
+              <p class="email-text" style="color: #4a4a5a; font-size: 16px; line-height: 1.5; margin: 0 0 32px 0;">
+                Hey {{NAME}}! Your personalized streaming stats are ready. See how much you watched, your favorite movies and shows, and see how you rank against others.
+              </p>
+
+              <!-- CTA Button -->
+              <a href="{{REVIEW_LINK}}" class="email-button" style="display: inline-block; background-color: #a855f7; color: #ffffff; text-decoration: none; padding: 16px 32px; border-radius: 50px; font-weight: 600; font-size: 16px;">
+                View Your Review
+              </a>
+
+              <!-- Opt-out notice -->
+              <p class="email-text" style="color: #6b6b7b; font-size: 12px; line-height: 1.4; margin: 32px 0 0 0;">
+                If you don't want to receive these emails, just reply and let me know.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

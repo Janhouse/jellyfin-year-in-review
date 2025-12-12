@@ -1,0 +1,48 @@
+{
+	"name": "jellyfin-year-in-review",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "bun --bun run next dev --turbopack",
+		"build": "bun --bun run next build",
+		"start": "bun --bun run  next start",
+		"typecheck": "bun --bun next typegen && bun --bun tsc --noEmit",
+		"lint": "bun --bun run biome check .",
+		"lint:fix": "bun --bun run biome check --write .",
+		"lint:ci": "biome ci .",
+		"format": "bun --bun run biome format --write ."
+	},
+	"dependencies": {
+		"@radix-ui/react-avatar": "^1.1.11",
+		"@radix-ui/react-progress": "^1.1.8",
+		"@radix-ui/react-select": "^2.2.6",
+		"@radix-ui/react-slot": "^1.2.4",
+		"@tailwindcss/postcss": "^4.1.18",
+		"better-auth": "^1.4.6",
+		"class-variance-authority": "^0.7.1",
+		"clsx": "^2.1.1",
+		"cron": "^4.4.0",
+		"framer-motion": "^12.23.26",
+		"js-confetti": "^0.13.1",
+		"lucide-react": "^0.560.0",
+		"next": "^16.0.8",
+		"nodemailer": "^7.0.11",
+		"postcss": "^8.5.6",
+		"react": "^19.2.1",
+		"react-dom": "^19.2.1",
+		"tailwind-merge": "^3.4.0",
+		"tailwindcss": "^4.1.18"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.3.8",
+		"@types/bun": "^1.2.12",
+		"@types/cron": "^2.4.3",
+		"@types/node": "^25.0.0",
+		"@types/nodemailer": "^7.0.4",
+		"@types/react": "^19.2.7",
+		"@types/react-dom": "^19.2.3",
+		"babel-plugin-react-compiler": "^1.0.0",
+		"typescript": "^5.9.3"
+	}
+}
