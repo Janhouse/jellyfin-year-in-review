@@ -210,7 +210,7 @@ export function MarathonSlide({ marathon, timezone }: MarathonSlideProps) {
 				<div className="max-h-40 overflow-y-auto space-y-2 text-left">
 					{mergedItems.slice(0, 10).map((item, index) => (
 						<motion.div
-							key={`${item.itemId}-${index}`}
+							key={item.itemId}
 							initial={{ opacity: 0, x: -10 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ delay: 0.9 + index * 0.05 }}

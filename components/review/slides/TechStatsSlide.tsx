@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import {
-	Chrome,
+	Globe,
 	Monitor,
 	RefreshCw,
 	Server,
@@ -27,7 +27,7 @@ interface TechStatsSlideProps {
 }
 
 const deviceIcons: Record<string, React.ReactNode> = {
-	chrome: <Chrome className="w-5 h-5" />,
+	chrome: <Globe className="w-5 h-5" />,
 	firefox: <Monitor className="w-5 h-5" />,
 	safari: <Monitor className="w-5 h-5" />,
 	android: <Smartphone className="w-5 h-5" />,
@@ -222,7 +222,7 @@ export function TechStatsSlide({
 					className="glass rounded-2xl p-5"
 				>
 					<h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-						<Chrome className="w-5 h-5 text-purple-400" />
+						<Globe className="w-5 h-5 text-purple-400" />
 						Apps Used
 					</h3>
 					<div className="space-y-3">
