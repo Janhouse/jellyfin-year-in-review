@@ -8,7 +8,8 @@ services:
       # at container startup via entrypoint.sh
     restart: "unless-stopped"
     env_file:
-      - .env.local
+      - path: .env.local
+        required: false
     volumes:
       - ./db:/app/db:ro
     ports:
