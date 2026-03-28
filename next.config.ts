@@ -59,6 +59,10 @@ const nextConfig: NextConfig = {
 	output: "standalone",
 	reactCompiler: true,
 	reactStrictMode: false, // true to test hooks
+	serverExternalPackages: ["cron"],
+	outputFileTracingExcludes: {
+		"/*": ["./next.config.ts"],
+	},
 	experimental: {
 		turbopackFileSystemCacheForDev: true,
 	},
@@ -67,7 +71,7 @@ const nextConfig: NextConfig = {
 	},
 	generateBuildId: async () => {
 		// Get tag of current branch(that is HEAD) or fallback to short commit hash (7 digits)
-		return require("node:child_process")
+		return (await import(/* turbopackIgnore: true */ "node:child_process"))
 			.execSync(
 				`git describe --exact-match --tags 2> /dev/null || git rev-parse --short HEAD`,
 			)

@@ -20,7 +20,10 @@ RUN sh scripts/generate-env-scripts.sh
 
 # Source the generated placeholders and build
 # Using 'set -a' to export all variables from .env.baked
+# BETTER_AUTH_SECRET/URL are build-time dummies to silence warnings during static page generation
 RUN set -a && . ./.env.baked && set +a && \
+    BETTER_AUTH_SECRET=build-placeholder-not-for-production-use-00000000 \
+    BETTER_AUTH_URL=http://localhost:3000 \
     bun run build && \
     mkdir -p /app/public
 

@@ -9,7 +9,7 @@ on:
       - completed
 
 env:
-  TRIVY_VERSION: v0.68.1
+  TRIVY_VERSION: v0.69.3
   CYCLONEDX_CLI_VERSION: v0.27.1
   DOCKER_REGISTRY: ${{ vars.DOCKER_REGISTRY }}
   DOCKER_IMAGE: ${{ vars.DOCKER_IMAGE }}

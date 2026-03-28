@@ -5,7 +5,7 @@ import path from "node:path";
 import { CronJob } from "cron";
 
 // Database paths - can be overridden with DB_DIR environment variable
-const DB_DIR = process.env.DB_DIR || path.join(process.cwd(), "db");
+const DB_DIR = process.env.DB_DIR || path.resolve("db");
 const JELLYFIN_DB = path.join(DB_DIR, "jellyfin.db");
 const PLAYBACK_DB = path.join(DB_DIR, "playback_reporting.db");
 
