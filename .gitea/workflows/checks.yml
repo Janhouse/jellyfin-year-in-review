@@ -20,7 +20,10 @@ jobs:
         uses: oven-sh/setup-bun@v2
         with:
           token: ${{ secrets.GHCR_ACCESS_TOKEN }}
-          bun-version: latest
+          # canary: `next build` (16.3.x) crashes Bun 1.3.14 with SIGILL during
+          # turbopack worker teardown after the build otherwise completes.
+          # Fixed in 1.4.0-canary; revert to `latest` once 1.4.0 is released.
+          bun-version: canary
 
       - name: Cache Bun dependencies
         uses: actions/cache@v4
