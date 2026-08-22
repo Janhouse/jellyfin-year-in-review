@@ -1,4 +1,4 @@
-FROM oven/bun:1-alpine AS base
+FROM oven/bun:1.4-alpine AS base
 RUN apk add --update --no-cache git wget grep \
   && rm -rf /var/cache/apk/*
 
