@@ -6,8 +6,8 @@ import { authClient } from "@/lib/auth-client";
 
 export function LoginView() {
 	const handleLogin = async () => {
-		await authClient.signIn.oauth2({
-			providerId: "authentik",
+		await authClient.signIn.social({
+			provider: "authentik",
 			callbackURL: "/",
 		});
 	};
