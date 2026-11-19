@@ -260,6 +260,8 @@ services:
 docker build -t jellyfin-year-in-review .
 ```
 
+CI (`.gitea/workflows/build.yml`) also rebuilds and pushes the image every week, so it picks up Alpine security updates without a code change.
+
 ### Running Standalone
 
 ```bash

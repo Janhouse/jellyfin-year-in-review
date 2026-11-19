@@ -1,4 +1,6 @@
 FROM oven/bun:1.4-alpine AS base
+# Upgrade the base image's OS packages so (weekly) rebuilds pick up Alpine security fixes.
+RUN apk upgrade --no-cache
 RUN apk add --update --no-cache git wget grep \
   && rm -rf /var/cache/apk/*
 
